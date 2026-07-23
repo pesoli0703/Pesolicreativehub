@@ -147,6 +147,7 @@
             height: 100vh;
             overflow: hidden;
             background: #000;
+            margin-top: 60px;
         }
 
         .hero-slide {
@@ -833,11 +834,9 @@
 
     <!-- Hero Section -->
     <section class="hero-slideshow" id="home">
-        <div class="hero-slide active" style="background-image: url('https://i.ibb.co/wjyy5nH/image.png')"></div>
-        <div class="hero-slide" style="background-image: url('https://i.ibb.co/tMmTZ9Nj/image.png')"></div>
-        <div class="hero-slide" style="background-image: url('https://i.ibb.co/N2dtKQNP/image.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('https://i.ibb.co/yB6W830J/image.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('https://i.ibb.co/2zsxPLd/image.jpg')"></div>
+        <div class="hero-slide active" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22><rect fill=%22%23333%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 font-size=%2240%22 fill=%22%23999%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Premium Portfolio</text></svg>')"></div>
+        <div class="hero-slide" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22><rect fill=%22%23444%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 font-size=%2240%22 fill=%22%23aaa%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Photo Restoration</text></svg>')"></div>
+        <div class="hero-slide" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22><rect fill=%22%23555%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 font-size=%2240%22 fill=%22%23bbb%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Portrait Design</text></svg>')"></div>
         
         <div class="hero-overlay"></div>
         
@@ -877,9 +876,6 @@
                             <div class="stat-label">Satisfaction</div>
                         </div>
                     </div>
-                </div>
-                <div style="position: relative; height: 500px;">
-                    <img src="https://i.ibb.co/8JWb1DC/image.jpg" alt="About" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);">
                 </div>
             </div>
         </div>
@@ -946,7 +942,6 @@
                 <button class="category-btn" data-category="birthday">Birthday Designs</button>
                 <button class="category-btn" data-category="studio">Studio Portraits</button>
                 <button class="category-btn" data-category="creative">Creative Edits</button>
-                <button class="category-btn" data-category="luxury">Luxury Portraits</button>
             </div>
 
             <div class="masonry-gallery" id="galleryContainer">
@@ -1277,23 +1272,23 @@
     </footer>
 
     <script>
-        // Portfolio Data
+        // Portfolio Data with YOUR REAL IMAGES
         const portfolioData = [
             // Photo Restoration
-            { src: 'https://i.ibb.co/wjyy5nH/image.png', category: 'restoration', label: 'Vintage Photo Restoration' },
-            { src: 'https://i.ibb.co/tMmTZ9Nj/image.png', category: 'restoration', label: 'Color Restoration' },
-            { src: 'https://i.ibb.co/N2dtKQNP/image.jpg', category: 'restoration', label: 'Damage Repair' },
-            { src: 'https://i.ibb.co/yB6W830J/image.jpg', category: 'restoration', label: 'Faded Photo Restoration' },
+            { src: 'https://imgur.com/upload', category: 'restoration', label: 'Child Portrait Restoration', type: 'after' },
+            { src: 'https://imgur.com/upload', category: 'restoration', label: 'Damaged Child Photo', type: 'before' },
+            { src: 'https://imgur.com/upload', category: 'restoration', label: 'Military Portrait Restored', type: 'after' },
+            { src: 'https://imgur.com/upload', category: 'restoration', label: 'Damaged Military Photo', type: 'before' },
             
-            // Birthday Designs
-            { src: 'https://i.ibb.co/2zsxPLd/image.jpg', category: 'birthday', label: 'Birthday Portrait Design' },
-            { src: 'https://i.ibb.co/8JWb1DC/image.jpg', category: 'birthday', label: 'Artistic Birthday Edit' },
-            { src: 'https://i.ibb.co/8DrD8Fxs/image.jpg', category: 'birthday', label: 'Birthday Celebration' },
-            { src: 'https://i.ibb.co/FLphf64K/image.jpg', category: 'birthday', label: 'Premium Birthday Design' },
-            { src: 'https://i.ibb.co/21dspBN2/image.jpg', category: 'birthday', label: 'Birthday Portrait' },
-            { src: 'https://i.ibb.co/bMpPttgs/image.jpg', category: 'birthday', label: 'Birthday Artistry' },
-            { src: 'https://i.ibb.co/N2bKyPqs/image.jpg', category: 'birthday', label: 'Stunning Birthday Edit' },
-            { src: 'https://i.ibb.co/k6m4GH0w/image.jpg', category: 'birthday', label: 'Birthday Masterpiece' },
+            // Birthday Designs & Portraits
+            { src: 'https://imgur.com/upload', category: 'birthday', label: 'Birthday Design - Pink & Gold' },
+            { src: 'https://imgur.com/upload', category: 'birthday', label: 'Birthday Design - Blue & Gold' },
+            { src: 'https://imgur.com/upload', category: 'studio', label: 'Professional Portrait' },
+            { src: 'https://imgur.com/upload', category: 'creative', label: 'Creative Portrait Edit' },
+            { src: 'https://imgur.com/upload', category: 'studio', label: 'Phone to Professional Transformation' },
+            { src: 'https://imgur.com/upload', category: 'creative', label: 'Professional Office Portrait' },
+            { src: 'https://imgur.com/upload', category: 'birthday', label: 'Event Celebration Portrait' },
+            { src: 'https://imgur.com/upload', category: 'creative', label: 'Portrait Enhancement' },
         ];
 
         // Initialize
@@ -1310,7 +1305,7 @@
                 itemDiv.className = 'gallery-item';
                 itemDiv.setAttribute('data-category', item.category);
                 itemDiv.innerHTML = `
-                    <img src="${item.src}" alt="${item.label}" loading="lazy">
+                    <img src="${item.src}" alt="${item.label}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay">
                         <div class="gallery-icon">🔍</div>
                     </div>
@@ -1393,14 +1388,14 @@
             const container = document.getElementById('beforeAfterContainer');
             const beforeAfterPairs = [
                 {
-                    before: 'https://i.ibb.co/wjyy5nH/image.png',
-                    after: 'https://i.ibb.co/tMmTZ9Nj/image.png',
-                    label: 'Vintage Restoration'
+                    before: 'https://imgur.com/upload',
+                    after: 'https://imgur.com/upload',
+                    label: 'Child Portrait Restoration'
                 },
                 {
-                    before: 'https://i.ibb.co/N2dtKQNP/image.jpg',
-                    after: 'https://i.ibb.co/yB6W830J/image.jpg',
-                    label: 'Color Restoration'
+                    before: 'https://imgur.com/upload',
+                    after: 'https://imgur.com/upload',
+                    label: 'Military Portrait Restoration'
                 }
             ];
 
@@ -1444,7 +1439,6 @@
                     updateSlider(e.touches[0], slider);
                 });
 
-                // Click anywhere to move slider
                 slider.addEventListener('click', (e) => {
                     updateSlider(e, slider);
                 });
@@ -1540,10 +1534,8 @@
             createBeforeAfterSliders();
             startHeroSlideshow();
 
-            // GSAP Animations
             gsap.registerPlugin(ScrollTrigger);
 
-            // Section animations
             gsap.from('.section-heading', {
                 scrollTrigger: {
                     trigger: '.section-heading',
