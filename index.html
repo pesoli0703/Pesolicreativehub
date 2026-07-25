@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pesoli Creative Hub - Premium Photo Restoration & Portrait Design. Transform ordinary photos into stunning professional-quality portraits.">
+    <meta name="theme-color" content="#000000">
+
+    <meta property="og:title" content="Pesoli Creative Hub | Premium Photo Restoration & Portrait Design">
+    <meta property="og:description" content="Transform ordinary photos into stunning professional-quality portraits. Birthday portraits, photo restoration, creative transformations.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/MDsqgVV5/51129924-0-B57-474-B-8382-DF985-C017-E62.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pesoli Creative Hub | Premium Photo Restoration">
+    <meta name="twitter:description" content="Transform ordinary photos into stunning professional-quality portraits.">
+
+    <title>Pesoli Creative Hub | Premium Photo Restoration & Portrait Design</title>
+
+    <link rel="preload" as="image" href="https://i.ibb.co/MDsqgVV5/51129924-0-B57-474-B-8382-DF985-C017-E62.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold:         #d4af37;
+            --gold-light:   #f0e68c;
+            --gold-dim:     rgba(212, 175, 55, 0.3);
+            --gold-faint:   rgba(212, 175, 55, 0.08);
+            --gold-border:  rgba(212, 175, 55, 0.2);
+            --bg-primary:   #0a0a0a;
+            --bg-glass:     rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+
+        .luxury-heading {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-accent { color: var(--gold); }
+
+        .glass-effect {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+        }
+
+        .section-padding { padding: 80px 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        .bg-fade-dark    { background: linear-gradient(to bottom, rgba(0,0,0,0.9), var(--bg-primary)); }
+        .bg-fade-mid     { background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-primary)); }
+        .bg-fade-heavy   { background: linear-gradient(to bottom, rgba(0,0,0,0.6), var(--bg-primary)); }
+        .bg-fade-reverse { background: linear-gradient(to bottom, var(--bg-primary), rgba(0,0,0,0.6)); }
+        .bg-gold-faint   { background: var(--gold-faint); }
+        .bg-cta          { background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(0,0,0,0.9)); }
+        .bg-subtle-half  { background: rgba(0,0,0,0.5); }
+
+        .luxury-button {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: #000;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .luxury-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px var(--gold-dim);
+        }
+
+        .luxury-button.secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .luxury-button.secondary:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gold-border);
+            padding: 20px 40px;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 6px 0;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 200;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: all 0.35s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-menu-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .mobile-menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.97);
+            backdrop-filter: blur(15px);
+            z-index: 150;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .mobile-nav.open {
+            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .mobile-nav a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .header { padding: 15px 20px; }
+        }
+
+        .luxury-loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.6s ease;
+        }
+
+        .luxury-loader.hidden { opacity: 0; pointer-events: none; }
+
+        .loader-dot {
+            display: inline-block;
+            width: 12px; height: 12px;
+            margin: 0 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 1.4s infinite;
+        }
+
+        .loader-dot:nth-child(2) { animation-delay: 0.2s; }
+        .loader-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50%       { opacity: 1; }
+        }
+
+        .mouse-glow {
+            position: fixed;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(212,175,55,0.15), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+            margin-top: 60px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center top;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .hero-slide.active { opacity: 1; }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .about-text-wrap { max-width: 800px; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .stat-item { text-align: center; }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label { font-size: 1rem; opacity: 0.8; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before { left: 100%; }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .category-btn.active { background: var(--gold); color: #000; }
+        .category-btn:hover  { transform: translateY(-2px); }
+
+        .masonry-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(212,175,55,0.2), rgba(0,0,0,0.8));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-icon { font-size: 40px; color: var(--gold); }
+
+        .image-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px 15px 15px;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 4;
+        }
+
+        .gallery-item:hover .image-label { opacity: 1; }
+
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+        }
+
+        .before-after-wrapper h4 {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .before-after-slider {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 3/4;
+            cursor: ew-resize;
+            border: 2px solid var(--gold-border);
+            background: #000;
+            --clip: 50%;
+            touch-action: none;
+        }
+
+        .before-after-image {
+            position: absolute;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+        }
+
+        .before-after-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: top;
+            pointer-events: none;
+        }
+
+        .before-after-image.after {
+            clip-path: polygon(var(--clip) 0, 100% 0, 100% 100%, var(--clip) 100%);
+        }
+
+        .before-after-handle {
+            position: absolute;
+            top: 0;
+            left: var(--clip);
+            height: 100%;
+            width: 3px;
+            background: var(--gold);
+            cursor: ew-resize;
+            z-index: 3;
+            transform: translateX(-50%);
+        }
+
+        .before-after-handle::before {
+            content: '◀ ▶';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px; height: 44px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .before-after-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            padding: 0 5px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .before-after-labels span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .before-after-labels span:last-child { color: var(--gold); }
+
+        .steps-container { max-width: 700px; margin: 0 auto; }
+        .step-item { text-align: center; margin-bottom: 40px; }
+        .step-number { font-size: 2.5rem; margin-bottom: 15px; }
+        .step-item h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
+        .step-item p  { opacity: 0.8; line-height: 1.7; }
+        .step-arrow   { text-align: center; font-size: 2rem; color: var(--gold); margin: 10px 0 30px; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+
+        .feature-card h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .feature-card p { opacity: 0.8; font-size: 0.9rem; line-height: 1.6; }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .testimonial-author { font-weight: 600; color: var(--gold); font-size: 0.95rem; }
+
+        .faq-container { max-width: 800px; margin: 0 auto; }
+
+        .faq-item {
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover { border-color: var(--gold); }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1rem;
+            gap: 20px;
+        }
+
+        .faq-toggle {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin-top 0.3s ease, opacity 0.3s ease;
+            margin-top: 0;
+            opacity: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            margin-top: 15px;
+            opacity: 0.85;
+        }
+
+        .portfolio-marquee {
+            overflow: hidden;
+            padding: 35px 0;
+            background: var(--gold-faint);
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 50px;
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.96);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .lightbox.active { opacity: 1; pointer-events: auto; }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -20px; right: -20px;
+            width: 44px; height: 44px;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .lightbox-close:hover { transform: scale(1.1) rotate(90deg); }
+
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, #25d366, #20ba5c);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+            font-size: 28px;
+            border: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37,211,102,0.6);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 105px; right: 30px;
+            width: 50px; height: 50px;
+            background: var(--gold);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 998;
+            border: none;
+        }
+
+        .back-to-top.show { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-5px); }
+
+        .restore-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .restore-item-icon { font-size: 2rem; margin-bottom: 10px; }
+
+        .footer {
+            background: rgba(0,0,0,0.9);
+            border-top: 1px solid var(--gold-border);
+            padding: 60px 20px 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer a { color: var(--gold); text-decoration: none; }
+
+        .footer-nav a {
+            color: rgba(255,255,255,0.8);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gold-border);
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding { padding: 120px 40px; }
+            .masonry-gallery { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-gallery { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .luxury-heading  { font-size: 2.2rem; letter-spacing: -1px; }
+            .section-heading { font-size: 2rem; }
+            .hero-buttons    { flex-direction: column; align-items: center; }
+            .hero-buttons .luxury-button { width: 100%; max-width: 280px; text-align: center; }
+            .sticky-whatsapp { bottom: 20px; right: 20px; }
+            .back-to-top     { bottom: 90px; right: 20px; }
+            .before-after-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="#home" class="logo" aria-label="Pesoli Creative Hub Home">PESOLI</a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#restoration">Restoration</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="#home"        class="mobile-nav-link">Home</a>
+        <a href="#services"    class="mobile-nav-link">Services</a>
+        <a href="#portfolio"   class="mobile-nav-link">Portfolio</a>
+        <a href="#restoration" class="mobile-nav-link">Restoration</a>
+        <a href="#faq"         class="mobile-nav-link">FAQ</a>
+        <a href="#contact"     class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <div class="luxury-loader" id="loader" role="status" aria-live="polite">
+        <div style="text-align:center;">
+            <div>
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+            </div>
+            <p style="margin-top:20px; color:var(--gold); font-size:0.9rem; letter-spacing:3px;">LOADING PORTFOLIO</p>
+        </div>
+    </div>
+
+    <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">×</button>
+        </div>
+    </div>
+
+    <div class="sticky-whatsapp">
+        <button class="whatsapp-btn" id="whatsappBtn" aria-label="Chat on WhatsApp">💬</button>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- HERO -->
+    <section class="hero-slideshow" id="home" aria-label="Hero section">
+        <div class="hero-slide active"
+             style="background-image:url('https://i.ibb.co/MDsqgVV5/51129924-0-B57-474-B-8382-DF985-C017-E62.png');"
+             role="img" aria-label="Restored child portrait"></div>
+        <div class="hero-slide"
+             style="background-image:url('https://i.ibb.co/JR9TYGzy/CEE52-C42-B8-BF-41-A8-8535-EC7-F4-F902-F66.png');"
+             role="img" aria-label="Restored soldier portrait"></div>
+        <div class="hero-slide"
+             style="background-image:url('https://i.ibb.co/qF5XmYgd/9399d182-98ea-4b51-957b-9491ac2be32b.jpg');"
+             role="img" aria-label="Birthday portrait design"></div>
+        <div class="hero-slide"
+             style="background-image:url('https://i.ibb.co/wFyZNJWf/IMG-4170.jpg');"
+             role="img" aria-label="Birthday portrait design"></div>
+
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <h1 class="luxury-heading">
+                NO STUDIO?<br>
+                <span class="gold-accent">WE'VE GOT YOU COVERED.</span>
+            </h1>
+            <p>Transform ordinary phone pictures, damaged photographs, and faded memories into stunning professional-quality portraits. Birthday portraits, photo restoration, creative transformations — we create artwork you'll be proud to display.</p>
+            <div class="hero-buttons">
+                <button class="luxury-button" id="heroCta">📲 Send Your Photo</button>
+                <button class="luxury-button secondary" id="heroPortfolio">View Our Work</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section-padding bg-fade-dark" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="about-text-wrap">
+                <h2 class="section-heading" id="about-heading" style="text-align:left;">
+                    Every Photo Has a Story
+                </h2>
+                <p style="font-size:1.1rem; line-height:1.8; opacity:0.9; margin-bottom:1.5rem;">
+                    At Pesoli Creative Hub, we believe every photograph holds a memory worth preserving. Whether your images are old, faded, damaged, or simply need that premium professional touch — we're here to restore and transform them into masterpieces.
+                </p>
+                <p style="font-size:1.1rem; line-height:1.8; opacity:0.9;">
+                    Our team of expert photo editors combines cutting-edge AI technology with meticulous hand-retouching to deliver results that exceed expectations. We're not just editing photos — we're preserving your most precious moments.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" aria-label="500 plus happy clients">500+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" aria-label="10 thousand plus photos restored">10k+</div>
+                        <div class="stat-label">Photos Restored</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" aria-label="98 percent satisfaction rate">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section-padding" id="services" aria-labelledby="services-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="services-heading">Premium Services</h2>
+            <div class="services-grid">
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">🖼️</span>
+                    <h3>Photo Restoration</h3>
+                    <p>Restore old, faded, torn, or damaged photographs to their original glory. We repair scratches, restore color, and bring your precious memories back to life.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">✨</span>
+                    <h3>AI Photo Enhancement</h3>
+                    <p>Enhance any photograph using advanced AI technology. Improve clarity, lighting, colors, and overall quality with professional precision.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">🎂</span>
+                    <h3>Birthday Portrait Designs</h3>
+                    <p>Transform birthday photos into stunning artistic designs. Perfect for celebrations, invitations, and creating lasting memories.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">📸</span>
+                    <h3>Studio Portrait Transformation</h3>
+                    <p>Turn casual phone pictures into studio-quality professional portraits. Professional lighting, background, and retouching included.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">🎨</span>
+                    <h3>Creative Portrait Editing</h3>
+                    <p>Artistic and creative edits that showcase your personality. From subtle enhancements to bold artistic transformations.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+                <article class="service-card glass-effect">
+                    <span class="service-icon" aria-hidden="true">💎</span>
+                    <h3>Premium Retouching</h3>
+                    <p>High-end retouching for perfect skin, flawless features, and magazine-quality results. Every detail matters.</p>
+                    <button class="luxury-button cta-whatsapp">Send Photo</button>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section-padding bg-fade-mid" id="portfolio" aria-labelledby="portfolio-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="portfolio-heading">Portfolio Gallery</h2>
+            <div class="category-filter" role="group" aria-label="Filter portfolio by category">
+                <button class="category-btn active" data-category="all"         aria-pressed="true">All Works</button>
+                <button class="category-btn"         data-category="restoration" aria-pressed="false">Restoration</button>
+                <button class="category-btn"         data-category="birthday"    aria-pressed="false">Birthday Designs</button>
+                <button class="category-btn"         data-category="raw"         aria-pressed="false">Client Photos</button>
+            </div>
+            <div class="masonry-gallery" id="galleryContainer" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- RESTORATION -->
+    <section class="section-padding bg-fade-heavy" id="restoration" aria-labelledby="restoration-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="restoration-heading">Restore Precious Memories</h2>
+            <p style="text-align:center; font-size:1.1rem; max-width:650px; margin:0 auto 60px; opacity:0.85; line-height:1.8;">
+                See the difference for yourself. Drag the slider to reveal the transformation from damaged original to fully restored masterpiece.
+            </p>
+
+            <div class="before-after-grid" id="beforeAfterContainer"></div>
+
+            <div style="margin-top:80px;">
+                <h3 style="text-align:center; color:var(--gold); font-size:1.2rem; margin-bottom:40px; font-weight:600; letter-spacing:1px;">WE RESTORE</h3>
+                <div class="restore-items">
+                    <div>
+                        <div class="restore-item-icon" aria-hidden="true">🕰️</div>
+                        <p style="opacity:0.85;">Old &amp; Faded Photos</p>
+                    </div>
+                    <div>
+                        <div class="restore-item-icon" aria-hidden="true">✂️</div>
+                        <p style="opacity:0.85;">Torn &amp; Scratched Images</p>
+                    </div>
+                    <div>
+                        <div class="restore-item-icon" aria-hidden="true">🖥️</div>
+                        <p style="opacity:0.85;">Damaged &amp; Blurry Photos</p>
+                    </div>
+                    <div>
+                        <div class="restore-item-icon" aria-hidden="true">🎯</div>
+                        <p style="opacity:0.85;">Color Correction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:60px;">
+                <button class="luxury-button cta-whatsapp" style="padding:16px 40px; font-size:1rem;">
+                    📲 Send Your Photo for FREE Assessment
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section-padding bg-fade-reverse" aria-labelledby="how-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="how-heading">How It Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number" aria-hidden="true">1️⃣</div>
+                    <h3>Send Your Photo</h3>
+                    <p>Send your photo on WhatsApp and tell us what you'd like us to create or restore.</p>
+                </div>
+                <div class="step-arrow" aria-hidden="true">↓</div>
+                <div class="step-item">
+                    <div class="step-number" aria-hidden="true">2️⃣</div>
+                    <h3>Discuss Style &amp; Budget</h3>
+                    <p>We understand your vision and provide a personalized quote based on your photo's condition.</p>
+                </div>
+                <div class="step-arrow" aria-hidden="true">↓</div>
+                <div class="step-item">
+                    <div class="step-number" aria-hidden="true">3️⃣</div>
+                    <h3>Professional Transformation</h3>
+                    <p>We work our magic using AI enhancement and expert hand-retouching.</p>
+                </div>
+                <div class="step-arrow" aria-hidden="true">↓</div>
+                <div class="step-item">
+                    <div class="step-number" aria-hidden="true">4️⃣</div>
+                    <h3>Receive Your Masterpiece</h3>
+                    <p>Get high-resolution files delivered via WhatsApp — ready to print or share.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section-padding bg-gold-faint" aria-labelledby="why-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="why-heading">Why Choose Pesoli Creative Hub</h2>
+            <div class="features-grid">
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">⭐</span>
+                    <h4>Premium Quality</h4>
+                    <p>Quality that exceeds expectations every single time.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">⚡</span>
+                    <h4>Fast Delivery</h4>
+                    <p>Quick turnaround without compromising quality.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">🖨️</span>
+                    <h4>High Resolution</h4>
+                    <p>All files in the highest resolution for perfect prints.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">👨‍💻</span>
+                    <h4>Professional Team</h4>
+                    <p>Expert editors with years of experience.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">🤖</span>
+                    <h4>AI Enhancement</h4>
+                    <p>Cutting-edge AI combined with human expertise.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">🔍</span>
+                    <h4>Attention to Detail</h4>
+                    <p>Every pixel perfected. Only great — never just good.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">💰</span>
+                    <h4>Affordable Pricing</h4>
+                    <p>Premium quality at prices that won't break the bank.</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon" aria-hidden="true">😊</span>
+                    <h4>Happy Clients</h4>
+                    <p>Trusted by hundreds of satisfied customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-padding bg-subtle-half" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="testimonials-heading">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"I sent a 30-year-old faded photograph and Pesoli transformed it beautifully. The color restoration was incredible!"</p>
+                    <footer class="testimonial-author">— Amara Okonkwo</footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"My daughter's birthday photo came out stunning! The artistic touches made it look like a professional portrait."</p>
+                    <footer class="testimonial-author">— Chioma Eze</footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"I damaged a family portrait and thought it was lost forever. Pesoli restored it perfectly. They're absolute artists!"</p>
+                    <footer class="testimonial-author">— Seun Adebayo</footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"Unmatched quality. Fast delivery, professional service, and fair prices. Best photo editing service I've used!"</p>
+                    <footer class="testimonial-author">— Tunde Ibrahim</footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"My wedding photo looked good, but Pesoli made it look extraordinary. The retouching was flawless and natural."</p>
+                    <footer class="testimonial-author">— Zainab Mohammed</footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card glass-effect">
+                    <div class="stars" aria-label="5 stars">★★★★★</div>
+                    <p class="testimonial-text">"Used them multiple times. Consistency, quality, and professionalism every single time. They never disappoint!"</p>
+                    <footer class="testimonial-author">— Kelechi Nwosu</footer>
+                </blockquote>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+            <h2 class="section-heading gradient-text" id="faq-heading">Frequently Asked Questions</h2>
+            <div class="faq-container">
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>Can blurry photos be restored?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Our advanced AI and retouching expertise can significantly improve blur. While severely blurry photos can't become crystal clear, we enhance clarity, reduce noise, and make them sharp enough for beautiful prints.</div>
+                </div>
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>Can damaged photos be repaired?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Absolutely! We specialize in restoring torn, scratched, water-damaged, and faded photographs. Our team repairs damage while preserving the original character of your photo.</div>
+                </div>
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>Can phone pictures look like studio portraits?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Definitely! Our Studio Portrait Transformation uses professional lighting adjustments, background enhancement, and premium retouching to make casual phone photos look studio-quality.</div>
+                </div>
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>How long does editing take?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Most projects are completed within 24–48 hours. Complex restorations may take longer. We'll give you an exact timeline when you send your photo.</div>
+                </div>
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>How do I place an order?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Simply send your photo on WhatsApp to 08109615982. Describe what you want and we'll respond with a personalized assessment and quote right away.</div>
+                </div>
+
+                <div class="faq-item glass-effect" tabindex="0" role="button" aria-expanded="false">
+                    <div class="faq-question">
+                        <span>How do I receive my final design?</span>
+                        <span class="faq-toggle" aria-hidden="true">+</span>
+                    </div>
+                    <div class="faq-answer">Your finished files will be delivered via WhatsApp in the highest resolution — ready for printing, framing, or sharing on social media.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="portfolio-marquee" aria-hidden="true">
+        <div class="marquee-content">
+            <span class="marquee-item">✨ Photo Restoration ✨</span>
+            <span class="marquee-item">🎂 Birthday Designs 🎂</span>
+            <span class="marquee-item">📸 Studio Portraits 📸</span>
+            <span class="marquee-item">🎨 Creative Edits 🎨</span>
+            <span class="marquee-item">💎 Premium Retouching 💎</span>
+            <span class="marquee-item">✨ Photo Restoration ✨</span>
+            <span class="marquee-item">🎂 Birthday Designs 🎂</span>
+            <span class="marquee-item">📸 Studio Portraits 📸</span>
+            <span class="marquee-item">🎨 Creative Edits 🎨</span>
+            <span class="marquee-item">💎 Premium Retouching 💎</span>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding bg-cta" id="contact" aria-labelledby="cta-heading">
+        <div class="container" style="text-align:center;">
+            <h2 class="section-heading gradient-text" id="cta-heading">Ready to Transform Your Photo?</h2>
+            <p style="font-size:1.1rem; opacity:0.9; max-width:650px; margin:0 auto 40px; line-height:1.8;">
+                Send your picture on WhatsApp for a <strong style="color:var(--gold);">FREE assessment</strong>. We'll review your photo, recommend the best transformation, and give you a personalized quote.
+            </p>
+            <button class="luxury-button cta-whatsapp" style="padding:16px 44px; font-size:1.1rem;">
+                📲 SEND YOUR PHOTO NOW
+            </button>
+            <div style="margin-top:40px; opacity:0.7; font-size:0.9rem; line-height:2;">
+                <p>WhatsApp: <a href="https://wa.me/2348109615982"
+                               style="color:var(--gold); font-weight:600; text-decoration:none;"
+                               rel="noopener">08109615982</a></p>
+                <p>We respond within minutes ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color:var(--gold); font-size:1.4rem; margin-bottom:15px; font-family:'Playfair Display',serif;">PESOLI</h3>
+                    <p style="opacity:0.7; line-height:1.8; font-size:0.9rem;">
+                        Every Photo Has a Story.<br>We Bring It Back to Life.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color:var(--gold); margin-bottom:20px; font-weight:600; font-size:0.95rem; letter-spacing:1px;">NAVIGATION</h4>
+                    <nav class="footer-nav" aria-label="Footer navigation">
+                        <a href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#restoration">Restoration</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <h4 style="color:var(--gold); margin-bottom:20px; font-weight:600; font-size:0.95rem; letter-spacing:1px;">CONTACT</h4>
+                    <p style="margin-bottom:12px; font-size:0.9rem;">
+                        <span style="opacity:0.7;">WhatsApp:</span><br>
+                        <a href="https://wa.me/2348109615982" rel="noopener">08109615982</a>
+                    </p>
+                    <p style="font-size:0.9rem;">
+                        <span style="opacity:0.7;">Instagram:</span><br>
+                        <a href="https://instagram.com/pesolicreativehub"
+                           target="_blank" rel="noopener noreferrer">@pesolicreativehub</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color:var(--gold); margin-bottom:20px; font-weight:600; font-size:0.95rem; letter-spacing:1px;">SERVICES</h4>
+                    <p style="opacity:0.7; font-size:0.85rem; line-height:2;">
+                        Photo Restoration<br>
+                        AI Enhancement<br>
+                        Birthday Designs<br>
+                        Studio Portraits<br>
+                        Creative Editing
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footerYear"></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        const CONFIG = {
+            whatsappNumber:  '2348109615982',
+            whatsappMessage: "Hello Pesoli Creative Hub! I'd like to transform or restore my photo. I'm sending my picture for a free assessment and quote.",
+        };
+
+        const PORTFOLIO_IMAGES = [
+            { src: 'https://i.ibb.co/MDsqgVV5/51129924-0-B57-474-B-8382-DF985-C017-E62.png', category: 'restoration', label: 'Child Portrait — Restored ✅' },
+            { src: 'https://i.ibb.co/dwtpzK1b/IMG-4124.jpg',                                  category: 'restoration', label: 'Child Portrait — Original (Damaged)' },
+            { src: 'https://i.ibb.co/JR9TYGzy/CEE52-C42-B8-BF-41-A8-8535-EC7-F4-F902-F66.png', category: 'restoration', label: 'Soldier Portrait — Restored ✅' },
+            { src: 'https://i.ibb.co/j9F8w835/IMG-4123.jpg',                                  category: 'restoration', label: 'Soldier Portrait — Original (Damaged)' },
+
+            { src: 'https://i.ibb.co/qF5XmYgd/9399d182-98ea-4b51-957b-9491ac2be32b.jpg',      category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/Y5n7dMY/8b47101d-28a7-453f-b376-4d01aa5631d4.jpg',       category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/CKTV36MF/4b9f9131-038a-44ac-844e-20ae51aceefa.jpg',      category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/zTYZvPqN/4f828dbe-7cd1-4f84-b41c-9df63b20cefc.jpg',      category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/wFyZNJWf/IMG-4170.jpg',                                  category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/cS3rP65d/IMG-4171.jpg',                                  category: 'birthday', label: 'Birthday Portrait Design' },
+            { src: 'https://i.ibb.co/JjNF91V3/IMG-4172.jpg',                                  category: 'birthday', label: 'Birthday Portrait Design' },
+
+            { src: 'https://i.ibb.co/BVkfFxrZ/d5c50b35-b2af-4050-9083-59d1cdf32fec.jpg',      category: 'raw', label: 'Client Photo — Before Edit' },
+            { src: 'https://i.ibb.co/99qgkg2y/4a648f56-e1b2-4158-b2b9-08bf67cfafe0.jpg',      category: 'raw', label: 'Client Photo — Before Edit' },
+            { src: 'https://i.ibb.co/fGQb7MNH/b8c1fa7e-b5e9-44ff-8418-505ee644dde8.jpg',      category: 'raw', label: 'Client Photo — Before Edit' },
+            { src: 'https://i.ibb.co/zTYCSbt5/f58f0fbe-d435-4658-9d65-1d7b32a16790.jpg',      category: 'raw', label: 'Client Photo — Before Edit' },
+        ];
+
+        const BEFORE_AFTER_PAIRS = [
+            {
+                before: 'https://i.ibb.co/dwtpzK1b/IMG-4124.jpg',
+                after:  'https://i.ibb.co/MDsqgVV5/51129924-0-B57-474-B-8382-DF985-C017-E62.png',
+                label:  'Child Portrait Restoration',
+            },
+            {
+                before: 'https://i.ibb.co/j9F8w835/IMG-4123.jpg',
+                after:  'https://i.ibb.co/JR9TYGzy/CEE52-C42-B8-BF-41-A8-8535-EC7-F4-F902-F66.png',
+                label:  'Soldier Portrait Restoration',
+            },
+        ];
+
+
+        /* WHATSAPP */
+        function openWhatsApp() {
+            window.open(
+                `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`,
+                '_blank',
+                'noopener,noreferrer'
+            );
+        }
+
+        document.getElementById('whatsappBtn').addEventListener('click',   openWhatsApp);
+        document.getElementById('heroCta').addEventListener('click',       openWhatsApp);
+        document.getElementById('heroPortfolio').addEventListener('click', () => {
+            document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+        });
+        document.querySelectorAll('.cta-whatsapp').forEach(btn => {
+            btn.addEventListener('click', openWhatsApp);
+        });
+
+
+        /* MOBILE MENU */
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav  = document.getElementById('mobileNav');
+
+        function toggleMenu(open) {
+            menuToggle.classList.toggle('open', open);
+            mobileNav.classList.toggle('open', open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            toggleMenu(!mobileNav.classList.contains('open'));
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+
+        /* LIGHTBOX */
+        const lightbox      = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+
+        function openLightbox(src, alt) {
+            lightboxImage.src = src;
+            lightboxImage.alt = alt || 'Portfolio preview';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('lightboxClose').focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (mobileNav.classList.contains('open'))  toggleMenu(false);
+                if (lightbox.classList.contains('active')) closeLightbox();
+            }
+        });
+
+
+        /* GALLERY */
+        function loadPortfolio() {
+            const gallery = document.getElementById('galleryContainer');
+            gallery.innerHTML = '';
+
+            PORTFOLIO_IMAGES.forEach(item => {
+                const div = document.createElement('div');
+                div.className        = 'gallery-item';
+                div.dataset.category = item.category;
+                div.setAttribute('tabindex', '0');
+                div.setAttribute('role', 'button');
+                div.setAttribute('aria-label', `View ${item.label}`);
+
+                div.innerHTML = `
+                    <img src="${item.src}" alt="${item.label}" loading="lazy">
+                    <div class="gallery-overlay" aria-hidden="true">
+                        <div class="gallery-icon">🔍</div>
+                    </div>
+                    <div class="image-label">${item.label}</div>
+                `;
+
+                const open = () => openLightbox(item.src, item.label);
+                div.addEventListener('click', open);
+                div.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+                });
+
+                gallery.appendChild(div);
+            });
+        }
+
+        function filterGallery(category) {
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                const visible = category === 'all' || item.dataset.category === category;
+
+                if (visible) {
+                    item.style.display = 'block';
+                    requestAnimationFrame(() => {
+                        item.style.opacity       = '1';
+                        item.style.pointerEvents = 'auto';
+                    });
+                } else {
+                    item.style.opacity       = '0';
+                    item.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        if (item.style.opacity === '0') item.style.display = 'none';
+                    }, 320);
+                }
+            });
+        }
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.category-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-pressed', 'true');
+                filterGallery(this.dataset.category);
+            });
+        });
+
+
+        /* BEFORE / AFTER SLIDERS */
+        function buildBeforeAfter() {
+            const container = document.getElementById('beforeAfterContainer');
+            container.innerHTML = '';
+
+            BEFORE_AFTER_PAIRS.forEach((pair, i) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'before-after-wrapper';
+                wrapper.innerHTML = `
+                    <h4>${pair.label}</h4>
+                    <div class="before-after-slider" data-index="${i}" role="img"
+                         aria-label="${pair.label} — drag to compare before and after">
+                        <div class="before-after-image">
+                            <img src="${pair.before}" alt="Before: ${pair.label}" loading="lazy">
+                        </div>
+                        <div class="before-after-image after">
+                            <img src="${pair.after}" alt="After: ${pair.label}" loading="lazy">
+                        </div>
+                        <div class="before-after-handle" aria-hidden="true"></div>
+                    </div>
+                    <div class="before-after-labels">
+                        <span>⬅ BEFORE</span>
+                        <span>AFTER ➡</span>
+                    </div>
+                `;
+                container.appendChild(wrapper);
+            });
+
+            initSliders();
+        }
+
+        function initSliders() {
+            document.querySelectorAll('.before-after-slider').forEach(slider => {
+                let dragging = false;
+
+                function setClip(e) {
+                    const rect    = slider.getBoundingClientRect();
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const pct     = Math.max(0, Math.min(((clientX - rect.left) / rect.width) * 100, 100));
+                    slider.style.setProperty('--clip', pct + '%');
+                }
+
+                slider.addEventListener('mousedown',  e  => { dragging = true; setClip(e); });
+                slider.addEventListener('touchstart', e  => { dragging = true; }, { passive: true });
+                window.addEventListener('mouseup',    () => { dragging = false; });
+                window.addEventListener('touchend',   () => { dragging = false; });
+                slider.addEventListener('mousemove',  e  => { if (dragging) setClip(e); });
+                slider.addEventListener('touchmove',  e  => { if (dragging) { e.preventDefault(); setClip(e); } }, { passive: false });
+                slider.addEventListener('click',      e  => setClip(e));
+
+                slider.setAttribute('tabindex', '0');
+                slider.addEventListener('keydown', e => {
+                    const current = parseFloat(slider.style.getPropertyValue('--clip')) || 50;
+                    if (e.key === 'ArrowLeft')  slider.style.setProperty('--clip', Math.max(0,   current - 5) + '%');
+                    if (e.key === 'ArrowRight') slider.style.setProperty('--clip', Math.min(100, current + 5) + '%');
+                });
+            });
+        }
+
+
+        /* HERO SLIDESHOW */
+        let currentSlide = 0;
+
+        function startSlideshow() {
+            const slides = document.querySelectorAll('.hero-slide');
+            if (slides.length < 2) return;
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
+
+
+        /* SCROLL PROGRESS + BACK TO TOP */
+        const scrollBar = document.getElementById('scrollProgress');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            if (total > 0) {
+                scrollBar.style.width = ((window.scrollY / total) * 100) + '%';
+            }
+            backToTop.classList.toggle('show', window.scrollY > 400);
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+
+        /* FAQ */
+        document.querySelectorAll('.faq-item').forEach(item => {
+            function toggleFaq() {
+                const isOpen = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(f => {
+                    f.classList.remove('active');
+                    f.setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('active');
+                    item.setAttribute('aria-expanded', 'true');
+                }
+            }
+            item.addEventListener('click', toggleFaq);
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFaq(); }
+            });
+        });
+
+
+        /* MOUSE GLOW */
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const glow = document.getElementById('mouseGlow');
+            document.addEventListener('mousemove', e => {
+                glow.style.transform = `translate3d(${e.clientX - 150}px, ${e.clientY - 150}px, 0)`;
+                glow.style.opacity   = '1';
+            }, { passive: true });
+        }
+
+
+        /* GSAP ANIMATIONS */
+        function initAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.utils.toArray('.section-heading').forEach(el => {
+                gsap.from(el, {
+                    scrollTrigger: { trigger: el, start: 'top 85%' },
+                    y: 30, opacity: 0, duration: 1, ease: 'power2.out',
+                });
+            });
+
+            gsap.from('#galleryContainer .gallery-item', {
+                scrollTrigger: { trigger: '#galleryContainer', start: 'top 85%' },
+                y: 40, opacity: 0, duration: 0.6,
+                stagger: { amount: 0.8 },
+                ease: 'power2.out',
+            });
+
+            gsap.utils.toArray('.service-card').forEach(card => {
+                gsap.from(card, {
+                    scrollTrigger: { trigger: card, start: 'top 90%' },
+                    y: 30, opacity: 0, duration: 0.7, ease: 'power2.out',
+                });
+            });
+
+            gsap.utils.toArray('.feature-card').forEach(card => {
+                gsap.from(card, {
+                    scrollTrigger: { trigger: card, start: 'top 92%' },
+                    y: 20, opacity: 0, duration: 0.6, ease: 'power2.out',
+                });
+            });
+        }
+
+
+        /* FOOTER YEAR */
+        document.getElementById('footerYear').textContent =
+            `© ${new Date().getFullYear()} Pesoli Creative Hub. All rights reserved.`;
+
+
+        /* INITIALIZE */
+        window.addEventListener('load', () => {
+            document.getElementById('loader').classList.add('hidden');
+            loadPortfolio();
+            buildBeforeAfter();
+            startSlideshow();
+            initAnimations();
+        });
+
+    </script>
+</body>
+</html>
