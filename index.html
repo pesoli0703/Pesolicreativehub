@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="Pesoli Creative Hub | Latest Portrait Work">
     <meta name="twitter:description" content="Photo restoration, portrait design and creative retouching. Explore the latest collection.">
     <title>Pesoli Creative Hub | Photo Restoration & Portrait Design</title>
-    <link rel="preload" as="image" href="assets/portfolio/red-print-portrait.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/optimized/v1/red-print-portrait-540.webp" imagesrcset="assets/optimized/v1/red-print-portrait-320.avif 320w, assets/optimized/v1/red-print-portrait-540.avif 540w, assets/optimized/v1/red-print-portrait-880.avif 880w" imagesizes="(min-width: 769px) min(440px, 38vw), (min-width: 560px) 420px, calc(100vw - 44px)" fetchpriority="high">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-400-normal.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-latin-700-normal.woff2" crossorigin>
 
@@ -80,7 +80,6 @@
 
         .glass-effect {
             background: var(--bg-glass);
-            backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
         }
 
@@ -278,7 +277,8 @@
         .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
         .hero-portrait { width: 100%; max-width: 440px; justify-self: end; min-width: 0; }
         .hero-frame { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 12px; border: 1px solid var(--gold-border); background: #151515; }
-        .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.7s ease; }
+        .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.7s ease; }
+        .hero-slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
         .hero-slide.active { opacity: 1; }
         .hero-caption { display: flex; justify-content: space-between; gap: 15px; margin-top: 16px; color: rgba(255,255,255,0.8); font-size: 0.8rem; }
         .hero-count { color: var(--gold); white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -308,7 +308,7 @@
             padding: 40px;
             border-radius: 12px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: transform 0.4s ease, border-color 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -739,7 +739,7 @@
         <div class="lightbox-shell">
             <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview" autofocus>×</button>
             <div class="lightbox-stage">
-                <img src="assets/portfolio/pastel-stairway.webp" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." class="lightbox-image" id="lightboxImage" width="1086" height="1448">
+                <img alt="" class="lightbox-image" id="lightboxImage" width="1086" height="1448">
             </div>
             <div class="lightbox-footer">
                 <p class="lightbox-caption"><span id="lightboxCaption">Red print portrait</span><span class="lightbox-count" id="lightboxCount">1 / 11</span></p>
@@ -775,12 +775,11 @@
             </div>
             <figure class="hero-portrait" aria-label="Latest portrait and celebration designs">
                 <div class="hero-frame" id="heroFrame">
-                    <img class="hero-slide active" src="assets/portfolio/red-print-portrait.webp" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" fetchpriority="high" decoding="async" aria-hidden="false" data-title="Red print portrait">
-                    <img class="hero-slide" src="assets/portfolio/gold-accents-portrait.webp" alt="Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Gold accents portrait">
-                    <img class="hero-slide" src="assets/portfolio/black-dress-mirror.webp" alt="Portrait in a ruched black dress leaning against a gold and mirrored console." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Black dress by the mirror">
-                    <img class="hero-slide" src="assets/portfolio/ninetieth-birthday-blue.webp" alt="90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations." width="1024" height="1536" loading="lazy" decoding="async" aria-hidden="true" data-title="90th birthday in blue">
-                    <img class="hero-slide" src="assets/portfolio/retirement-sixtieth-birthday.webp" alt="Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement &amp; 60th Birthday banner." width="928" height="877" loading="lazy" decoding="async" aria-hidden="true" data-title="Retirement &amp; 60th birthday">
-                    <img class="hero-slide" src="assets/portfolio/ninetieth-birthday-green.webp" alt="90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="90th birthday in green">
+                    <picture class="hero-slide active" data-title="Red print portrait" aria-hidden="false">
+                        <source type="image/avif" srcset="assets/optimized/v1/red-print-portrait-320.avif 320w, assets/optimized/v1/red-print-portrait-540.avif 540w, assets/optimized/v1/red-print-portrait-880.avif 880w" sizes="(min-width: 769px) min(440px, 38vw), (min-width: 560px) 420px, calc(100vw - 44px)">
+                        <img src="assets/optimized/v1/red-print-portrait-540.webp" srcset="assets/optimized/v1/red-print-portrait-320.webp 320w, assets/optimized/v1/red-print-portrait-540.webp 540w, assets/optimized/v1/red-print-portrait-880.webp 880w" sizes="(min-width: 769px) min(440px, 38vw), (min-width: 560px) 420px, calc(100vw - 44px)" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" fetchpriority="high">
+                    </picture>
+                    <script type="application/json" id="heroSlideData">[{"slug": "gold-accents-portrait", "title": "Gold accents portrait", "alt": "Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors.", "width": 1086, "height": 1448}, {"slug": "black-dress-mirror", "title": "Black dress by the mirror", "alt": "Portrait in a ruched black dress leaning against a gold and mirrored console.", "width": 1086, "height": 1448}, {"slug": "ninetieth-birthday-blue", "title": "90th birthday in blue", "alt": "90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations.", "width": 1024, "height": 1536}, {"slug": "retirement-sixtieth-birthday", "title": "Retirement & 60th birthday", "alt": "Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement & 60th Birthday banner.", "width": 928, "height": 877}, {"slug": "ninetieth-birthday-green", "title": "90th birthday in green", "alt": "90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations.", "width": 1086, "height": 1448}]</script>
                 </div>
                 <figcaption class="hero-caption"><span id="heroCaption">Red print portrait</span><span class="hero-count" id="heroCount">01 / 06</span></figcaption>
                 <div class="slideshow-controls" id="slideshowControls" hidden>
@@ -904,7 +903,10 @@
             <p class="gallery-status" id="galleryStatus" role="status" aria-live="polite" hidden>Showing all 11 photos</p>
             <div class="masonry-gallery" id="galleryContainer">
                 <a class="gallery-item" href="assets/portfolio/red-print-portrait.webp" data-category="portraits" data-title="Red print portrait" aria-label="View full image: Red print portrait" aria-haspopup="dialog">
-                    <img src="assets/portfolio/red-print-portrait-540.webp" srcset="assets/portfolio/red-print-portrait-540.webp 540w, assets/portfolio/red-print-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/red-print-portrait-320.avif 320w, assets/optimized/v1/red-print-portrait-540.avif 540w, assets/optimized/v1/red-print-portrait-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/red-print-portrait-540.webp" srcset="assets/optimized/v1/red-print-portrait-320.webp 320w, assets/optimized/v1/red-print-portrait-540.webp 540w, assets/optimized/v1/red-print-portrait-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -916,7 +918,10 @@
                     <span class="image-label">Red print portrait</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/gold-accents-portrait.webp" data-category="portraits" data-title="Gold accents portrait" aria-label="View full image: Gold accents portrait" aria-haspopup="dialog">
-                    <img src="assets/portfolio/gold-accents-portrait-540.webp" srcset="assets/portfolio/gold-accents-portrait-540.webp 540w, assets/portfolio/gold-accents-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/gold-accents-portrait-320.avif 320w, assets/optimized/v1/gold-accents-portrait-540.avif 540w, assets/optimized/v1/gold-accents-portrait-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/gold-accents-portrait-540.webp" srcset="assets/optimized/v1/gold-accents-portrait-320.webp 320w, assets/optimized/v1/gold-accents-portrait-540.webp 540w, assets/optimized/v1/gold-accents-portrait-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -928,7 +933,10 @@
                     <span class="image-label">Gold accents portrait</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/black-dress-mirror.webp" data-category="portraits" data-title="Black dress by the mirror" aria-label="View full image: Black dress by the mirror" aria-haspopup="dialog">
-                    <img src="assets/portfolio/black-dress-mirror-540.webp" srcset="assets/portfolio/black-dress-mirror-540.webp 540w, assets/portfolio/black-dress-mirror.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a ruched black dress leaning against a gold and mirrored console." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/black-dress-mirror-320.avif 320w, assets/optimized/v1/black-dress-mirror-540.avif 540w, assets/optimized/v1/black-dress-mirror-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/black-dress-mirror-540.webp" srcset="assets/optimized/v1/black-dress-mirror-320.webp 320w, assets/optimized/v1/black-dress-mirror-540.webp 540w, assets/optimized/v1/black-dress-mirror-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Portrait in a ruched black dress leaning against a gold and mirrored console." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -940,7 +948,10 @@
                     <span class="image-label">Black dress by the mirror</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/ninetieth-birthday-blue.webp" data-category="celebrations" data-title="90th birthday in blue" aria-label="View full image: 90th birthday in blue" aria-haspopup="dialog">
-                    <img src="assets/portfolio/ninetieth-birthday-blue-540.webp" srcset="assets/portfolio/ninetieth-birthday-blue-540.webp 540w, assets/portfolio/ninetieth-birthday-blue.webp 1024w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations." width="1024" height="1536" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/ninetieth-birthday-blue-320.avif 320w, assets/optimized/v1/ninetieth-birthday-blue-540.avif 540w, assets/optimized/v1/ninetieth-birthday-blue-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/ninetieth-birthday-blue-540.webp" srcset="assets/optimized/v1/ninetieth-birthday-blue-320.webp 320w, assets/optimized/v1/ninetieth-birthday-blue-540.webp 540w, assets/optimized/v1/ninetieth-birthday-blue-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations." width="1024" height="1536" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -952,7 +963,10 @@
                     <span class="image-label">90th birthday in blue</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/retirement-sixtieth-birthday.webp" data-category="celebrations" data-title="Retirement &amp; 60th birthday" aria-label="View full image: Retirement &amp; 60th birthday" aria-haspopup="dialog">
-                    <img src="assets/portfolio/retirement-sixtieth-birthday-540.webp" srcset="assets/portfolio/retirement-sixtieth-birthday-540.webp 540w, assets/portfolio/retirement-sixtieth-birthday.webp 928w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement &amp; 60th Birthday banner." width="928" height="877" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/retirement-sixtieth-birthday-320.avif 320w, assets/optimized/v1/retirement-sixtieth-birthday-540.avif 540w, assets/optimized/v1/retirement-sixtieth-birthday-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/retirement-sixtieth-birthday-540.webp" srcset="assets/optimized/v1/retirement-sixtieth-birthday-320.webp 320w, assets/optimized/v1/retirement-sixtieth-birthday-540.webp 540w, assets/optimized/v1/retirement-sixtieth-birthday-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement &amp;amp; 60th Birthday banner." width="928" height="877" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -964,7 +978,10 @@
                     <span class="image-label">Retirement &amp; 60th birthday</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/ninetieth-birthday-green.webp" data-category="celebrations" data-title="90th birthday in green" aria-label="View full image: 90th birthday in green" aria-haspopup="dialog">
-                    <img src="assets/portfolio/ninetieth-birthday-green-540.webp" srcset="assets/portfolio/ninetieth-birthday-green-540.webp 540w, assets/portfolio/ninetieth-birthday-green.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/ninetieth-birthday-green-320.avif 320w, assets/optimized/v1/ninetieth-birthday-green-540.avif 540w, assets/optimized/v1/ninetieth-birthday-green-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/ninetieth-birthday-green-540.webp" srcset="assets/optimized/v1/ninetieth-birthday-green-320.webp 320w, assets/optimized/v1/ninetieth-birthday-green-540.webp 540w, assets/optimized/v1/ninetieth-birthday-green-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -976,7 +993,10 @@
                     <span class="image-label">90th birthday in green</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/pastel-stairway.webp" data-category="portraits" data-title="Pastel tones on the stairs" aria-label="View full photo: Pastel tones on the stairs" aria-haspopup="dialog">
-                    <img src="assets/portfolio/pastel-stairway-540.webp" srcset="assets/portfolio/pastel-stairway-540.webp 540w, assets/portfolio/pastel-stairway.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a pink halter top and pastel patterned shorts, leaning on a staircase railing." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/pastel-stairway-320.avif 320w, assets/optimized/v1/pastel-stairway-540.avif 540w, assets/optimized/v1/pastel-stairway-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/pastel-stairway-540.webp" srcset="assets/optimized/v1/pastel-stairway-320.webp 320w, assets/optimized/v1/pastel-stairway-540.webp 540w, assets/optimized/v1/pastel-stairway-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Portrait in a pink halter top and pastel patterned shorts, leaning on a staircase railing." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -988,7 +1008,10 @@
                     <span class="image-label">Pastel tones on the stairs</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/courtyard-portrait.webp" data-category="outdoor" data-title="Courtyard in blue" aria-label="View full photo: Courtyard in blue" aria-haspopup="dialog">
-                    <img src="assets/portfolio/courtyard-portrait-540.webp" srcset="assets/portfolio/courtyard-portrait-540.webp 540w, assets/portfolio/courtyard-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a blue floral dress, seated beneath a green umbrella in a courtyard." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/courtyard-portrait-320.avif 320w, assets/optimized/v1/courtyard-portrait-540.avif 540w, assets/optimized/v1/courtyard-portrait-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/courtyard-portrait-540.webp" srcset="assets/optimized/v1/courtyard-portrait-320.webp 320w, assets/optimized/v1/courtyard-portrait-540.webp 540w, assets/optimized/v1/courtyard-portrait-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Portrait in a blue floral dress, seated beneath a green umbrella in a courtyard." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -1000,7 +1023,10 @@
                     <span class="image-label">Courtyard in blue</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/pastel-portrait.webp" data-category="portraits" data-title="Pastel portrait by the staircase" aria-label="View full photo: Pastel portrait by the staircase" aria-haspopup="dialog">
-                    <img src="assets/portfolio/pastel-portrait-540.webp" srcset="assets/portfolio/pastel-portrait-540.webp 540w, assets/portfolio/pastel-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Full-length portrait in a pink top and pastel patterned shorts beside a staircase and green plant." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/pastel-portrait-320.avif 320w, assets/optimized/v1/pastel-portrait-540.avif 540w, assets/optimized/v1/pastel-portrait-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/pastel-portrait-540.webp" srcset="assets/optimized/v1/pastel-portrait-320.webp 320w, assets/optimized/v1/pastel-portrait-540.webp 540w, assets/optimized/v1/pastel-portrait-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Full-length portrait in a pink top and pastel patterned shorts beside a staircase and green plant." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -1012,7 +1038,10 @@
                     <span class="image-label">Pastel portrait by the staircase</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/gold-mirror-portrait.webp" data-category="portraits" data-title="Gold mirror portrait" aria-label="View full photo: Gold mirror portrait" aria-haspopup="dialog">
-                    <img src="assets/portfolio/gold-mirror-portrait-540.webp" srcset="assets/portfolio/gold-mirror-portrait-540.webp 540w, assets/portfolio/gold-mirror-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a pink halter top and colorful shorts beside a gold-framed mirror." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/gold-mirror-portrait-320.avif 320w, assets/optimized/v1/gold-mirror-portrait-540.avif 540w, assets/optimized/v1/gold-mirror-portrait-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/gold-mirror-portrait-540.webp" srcset="assets/optimized/v1/gold-mirror-portrait-320.webp 320w, assets/optimized/v1/gold-mirror-portrait-540.webp 540w, assets/optimized/v1/gold-mirror-portrait-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Portrait in a pink halter top and colorful shorts beside a gold-framed mirror." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -1024,7 +1053,10 @@
                     <span class="image-label">Gold mirror portrait</span>
                 </a>
                 <a class="gallery-item" href="assets/portfolio/blue-poolside.webp" data-category="outdoor" data-title="Poolside in blue" aria-label="View full photo: Poolside in blue" aria-haspopup="dialog">
-                    <img src="assets/portfolio/blue-poolside-540.webp" srcset="assets/portfolio/blue-poolside-540.webp 540w, assets/portfolio/blue-poolside.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Outdoor portrait in a bright blue swimsuit beside a pool terrace railing." width="1086" height="1448" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/optimized/v1/blue-poolside-320.avif 320w, assets/optimized/v1/blue-poolside-540.avif 540w, assets/optimized/v1/blue-poolside-880.avif 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)">
+                        <img src="assets/optimized/v1/blue-poolside-540.webp" srcset="assets/optimized/v1/blue-poolside-320.webp 320w, assets/optimized/v1/blue-poolside-540.webp 540w, assets/optimized/v1/blue-poolside-880.webp 880w" sizes="(min-width: 1480px) 451px, (min-width: 1000px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 560px) calc((100vw - 64px) / 2), calc(100vw - 40px)" alt="Outdoor portrait in a bright blue swimsuit beside a pool terrace railing." width="1086" height="1448" loading="lazy" decoding="async">
+                    </picture>
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
   <path d="M21 16v5h-5" />
@@ -1374,10 +1406,16 @@
             lightboxImage.height = Number(thumbnail.getAttribute('height'));
             document.getElementById('lightboxCaption').textContent = item.dataset.title;
             document.getElementById('lightboxCount').textContent = `${currentPhoto + 1} / ${visibleItems.length}`;
-            const previous = visibleItems[(currentPhoto - 1 + visibleItems.length) % visibleItems.length];
+            const requestedPhoto = currentPhoto;
             const next = visibleItems[(currentPhoto + 1) % visibleItems.length];
-            new Image().src = next.href;
-            if (previous !== next) new Image().src = previous.href;
+            lightboxImage.decode().then(() => {
+                if (requestedPhoto !== currentPhoto || !lightbox.open) return;
+                const prefetch = () => {
+                    if (requestedPhoto === currentPhoto && lightbox.open && !navigator.connection?.saveData) new Image().src = next.href;
+                };
+                if ('requestIdleCallback' in window) window.requestIdleCallback(prefetch, { timeout: 1500 });
+                else window.setTimeout(prefetch, 500);
+            }).catch(() => {});
         }
 
         galleryItems.forEach(item => {
@@ -1405,16 +1443,72 @@
 
         // Latest-work slideshow. Manual controls remain available with reduced motion.
         const slides = [...document.querySelectorAll('.hero-slide')];
+        const heroFrame = document.getElementById('heroFrame');
+        const heroSizes = "(min-width: 769px) min(440px, 38vw), (min-width: 560px) 420px, calc(100vw - 44px)";
+        const heroData = JSON.parse(document.getElementById('heroSlideData').textContent);
+        heroData.forEach(data => {
+            const frame = document.createElement('picture');
+            frame.className = 'hero-slide';
+            frame.dataset.title = data.title;
+            frame.setAttribute('aria-hidden', 'true');
+            const source = document.createElement('source');
+            source.type = 'image/avif';
+            source.sizes = heroSizes;
+            source.dataset.srcset = [320, 540, 880].map(width => `assets/optimized/v1/${data.slug}-${width}.avif ${width}w`).join(', ');
+            const image = document.createElement('img');
+            image.alt = data.alt;
+            image.width = data.width;
+            image.height = data.height;
+            image.decoding = 'async';
+            image.sizes = heroSizes;
+            image.dataset.srcset = [320, 540, 880].map(width => `assets/optimized/v1/${data.slug}-${width}.webp ${width}w`).join(', ');
+            image.dataset.src = `assets/optimized/v1/${data.slug}-540.webp`;
+            frame.append(source, image);
+            heroFrame.append(frame);
+            slides.push(frame);
+        });
+
+        function loadSlide(index) {
+            const image = slides[index].querySelector('img');
+            if (!image.dataset.src) return image;
+            const source = slides[index].querySelector('source');
+            source.srcset = source.dataset.srcset;
+            image.srcset = image.dataset.srcset;
+            image.src = image.dataset.src;
+            delete source.dataset.srcset;
+            delete image.dataset.srcset;
+            delete image.dataset.src;
+            return image;
+        }
+
         const slideButtons = [...document.querySelectorAll('.slideshow-dot')];
         const slideshowToggle = document.getElementById('slideshowToggle');
-        const heroFrame = document.getElementById('heroFrame');
         let currentSlide = 0;
-        let paused = reducedMotion.matches;
+        let paused = reducedMotion.matches || Boolean(navigator.connection?.saveData);
         let pointerInside = false;
+        let heroVisible = true;
+        let slideRequest = 0;
+        let prepareTimer;
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; }, { threshold: 0.05 }).observe(heroFrame);
+        }
         document.getElementById('slideshowControls').hidden = false;
 
-        function showSlide(index) {
-            currentSlide = (index + slides.length) % slides.length;
+        function prepareNextSlide() {
+            window.clearTimeout(prepareTimer);
+            if (paused || !heroVisible || document.hidden || navigator.connection?.saveData) return;
+            prepareTimer = window.setTimeout(() => {
+                if (!paused && heroVisible && !document.hidden) loadSlide((currentSlide + 1) % slides.length);
+            }, 4000);
+        }
+        async function showSlide(index) {
+            const target = (index + slides.length) % slides.length;
+            const request = ++slideRequest;
+            const image = loadSlide(target);
+            try { await image.decode(); } catch {}
+            // Keep the current photo visible until the requested one is ready.
+            if (request !== slideRequest) return;
+            currentSlide = target;
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === currentSlide);
                 slide.setAttribute('aria-hidden', String(i !== currentSlide));
@@ -1422,19 +1516,22 @@
             slideButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === currentSlide)));
             document.getElementById('heroCaption').textContent = slides[currentSlide].dataset.title;
             document.getElementById('heroCount').textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            prepareNextSlide();
         }
         function updatePauseButton() {
             slideshowToggle.textContent = paused ? 'Play' : 'Pause';
             slideshowToggle.setAttribute('aria-label', paused ? 'Start automatic slideshow' : 'Pause automatic slideshow');
         }
         slideButtons.forEach(button => button.addEventListener('click', () => showSlide(Number(button.dataset.slide))));
-        slideshowToggle.addEventListener('click', () => { paused = !paused; updatePauseButton(); });
+        slideshowToggle.addEventListener('click', () => { paused = !paused; updatePauseButton(); prepareNextSlide(); });
         heroFrame.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') pointerInside = true; });
         heroFrame.addEventListener('pointerleave', () => { pointerInside = false; });
-        reducedMotion.addEventListener('change', event => { paused = event.matches; updatePauseButton(); });
+        reducedMotion.addEventListener('change', event => { paused = event.matches || Boolean(navigator.connection?.saveData); updatePauseButton(); prepareNextSlide(); });
+        document.addEventListener('visibilitychange', prepareNextSlide);
         updatePauseButton();
+        window.addEventListener('load', prepareNextSlide, { once: true });
         window.setInterval(() => {
-            if (!paused && !pointerInside && !document.hidden && !lightbox.open && !mobileNav.classList.contains('open') && !document.querySelector('.hero-portrait').contains(document.activeElement)) showSlide(currentSlide + 1);
+            if (heroVisible && !paused && !pointerInside && !document.hidden && !lightbox.open && !mobileNav.classList.contains('open') && !document.querySelector('.hero-portrait').contains(document.activeElement)) showSlide(currentSlide + 1);
         }, 6500);
 
         // Native FAQ buttons: no custom key handlers or hidden keyboard traps.
@@ -1452,22 +1549,38 @@
 
         const scrollBar = document.getElementById('scrollProgress');
         const backToTop = document.getElementById('backToTop');
+        let scrollFrame = 0;
+        let documentHeight = document.documentElement.scrollHeight;
         function updateScrollProgress() {
-            const total = document.documentElement.scrollHeight - window.innerHeight;
+            scrollFrame = 0;
+            const total = documentHeight - window.innerHeight;
             scrollBar.style.width = (total > 0 ? Math.min(100, window.scrollY / total * 100) : 0) + '%';
-            backToTop.classList.toggle('show', window.scrollY > 400);
-            backToTop.tabIndex = window.scrollY > 400 ? 0 : -1;
+            const show = window.scrollY > 400;
+            backToTop.classList.toggle('show', show);
+            backToTop.tabIndex = show ? 0 : -1;
         }
-        window.addEventListener('scroll', updateScrollProgress, { passive: true });
-        window.addEventListener('resize', updateScrollProgress, { passive: true });
+        function queueScrollUpdate() {
+            if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollProgress);
+        }
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(() => { documentHeight = document.documentElement.scrollHeight; queueScrollUpdate(); }).observe(document.body);
+        }
+        window.addEventListener('scroll', queueScrollUpdate, { passive: true });
+        window.addEventListener('resize', () => { documentHeight = document.documentElement.scrollHeight; queueScrollUpdate(); }, { passive: true });
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' }));
         updateScrollProgress();
 
         if (window.matchMedia('(pointer: fine)').matches && !reducedMotion.matches) {
             const glow = document.getElementById('mouseGlow');
+            let glowFrame = 0, pointerX = 0, pointerY = 0;
             document.addEventListener('pointermove', event => {
-                glow.style.transform = `translate3d(${event.clientX - 150}px, ${event.clientY - 150}px, 0)`;
-                glow.style.opacity = '1';
+                pointerX = event.clientX; pointerY = event.clientY;
+                if (glowFrame) return;
+                glowFrame = requestAnimationFrame(() => {
+                    glow.style.transform = `translate3d(${pointerX - 150}px, ${pointerY - 150}px, 0)`;
+                    glow.style.opacity = '1';
+                    glowFrame = 0;
+                });
             }, { passive: true });
         }
 

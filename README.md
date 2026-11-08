@@ -4,7 +4,7 @@ A black-and-gold portfolio website for photo restoration, portrait design, creat
 
 ## Latest portfolio
 
-The website showcases 11 supplied works: the five photographs from the previous update plus six new additions. Each is stored locally with a smaller gallery image and a full-size viewer image. The uploads have not been retouched or generatively edited for the website; the site copies are optimized as WebP.
+The website showcases 11 supplied works: the five photographs from the previous update plus six new additions. Each has responsive AVIF/WebP display images and a locally stored full-size WebP for the viewer. The uploads have not been retouched or generatively edited for the website.
 
 ### New additions
 
@@ -52,16 +52,38 @@ Gallery filters show all 11 works, six portraits, two outdoor photographs, or th
 - Keyboard-accessible FAQ buttons.
 - Direct WhatsApp enquiry links, including a pre-filled message.
 - Locally hosted images and fonts; no third-party scripts or image hosts are required to render the site.
-- Responsive image sources, lazy-loaded gallery images, and explicit image dimensions.
+- Responsive AVIF sources with WebP fallbacks, lazy-loaded gallery images, and explicit image dimensions.
+- Only the first hero image is loaded initially on mobile. Other slides load on selection or shortly before automatic playback; automatic downloads pause offscreen, in hidden tabs, with reduced motion, or with Data Saver enabled.
+- The full-size viewer downloads its selected photograph on demand and waits for it to decode before prefetching the next one.
+- Scroll-progress and pointer-glow updates are batched with `requestAnimationFrame`.
+
+## Loading performance
+
+Display images are generated at 320, 540, and 880 pixels wide in both AVIF and WebP. The browser chooses the appropriate size for the viewport and pixel density. Original full-size viewer images are unchanged.
+
+Controlled local Chromium measurements before and after this update:
+
+| Median of three cold-cache mobile runs | Before | After |
+| --- | ---: | ---: |
+| Load event | 10.81 s | 1.13 s |
+| Largest Contentful Paint | 7.70 s | 1.86 s |
+| Initial encoded transfer | 2.10 MB | 167 KB |
+| Initial requests | 14 | 8 |
+
+Test profile: 390 × 844 viewport at 2× pixel density, 1.6 Mbps download, 750 kbps upload, 150 ms latency, 4× CPU throttling, and Brotli-compressed HTML. Network totals were captured at the load event; LCP was sampled after image decoding and a short settling period. These are local comparisons, not production Lighthouse scores or a guarantee for every visitor/network.
+
+`vercel.json` adds long-lived immutable caching for versioned display images and local fonts, shorter caching with stale-while-revalidate for full-size portfolio images, and revalidation for the HTML document. When replacing a display image or font, use a new filename/version path rather than overwriting an immutably cached file.
 
 ## Project structure
 
 ```text
 Pesolicreativehub/
 ├── index.html                 # Page markup, styles, and interactions
+├── vercel.json                # Static-asset caching and response headers
 ├── assets/
 │   ├── LUCIDE-LICENSE.txt      # License for the vector icons
-│   ├── portfolio/             # Eleven full-size WebPs and gallery thumbnails
+│   ├── optimized/v1/          # Responsive AVIF/WebP hero and gallery images
+│   ├── portfolio/             # Eleven full-size WebPs and legacy thumbnails
 │   └── fonts/                 # Poppins, Playfair Display, and their licenses
 └── README.md
 ```
@@ -80,18 +102,18 @@ Open `http://localhost:3000` when browsing on the same computer. In a hosted dev
 
 ## Update the portfolio
 
-1. Add optimized photographs to `assets/portfolio/`. Use descriptive filenames and include appropriate alternative text.
-2. Update the hero images and slideshow selection buttons in `index.html`.
-3. Add matching gallery links in `galleryContainer`, including the full-size `href`, thumbnail `src`/`srcset`, title, alternative text, and `data-category` (`portraits`, `outdoor`, or `celebrations`).
+1. Add the full-size WebP to `assets/portfolio/` and generate 320/540/880-pixel AVIF and WebP derivatives under a new version path in `assets/optimized/`. Preserve aspect ratios and include appropriate alternative text.
+2. Update the first `picture.hero-slide`, the `heroSlideData` JSON metadata, and the slideshow selection buttons in `index.html`. Keep deferred slides free of active `src`/`srcset` attributes until selection.
+3. Add matching gallery links in `galleryContainer`, including the full-size `href`, responsive `picture` sources, lazy-loaded fallback `img`, title, alternative text, dimensions, and `data-category` (`portraits`, `outdoor`, or `celebrations`).
 4. Update the filter counts, initial gallery status, and initial image counters to match the new collection.
-5. If the first featured photo changes, update its preload and social-preview image references in the document head.
-6. Check the gallery, filters, full-size viewer, slideshow, and mobile layout before publishing.
+5. If the first featured photo changes, update its responsive preload and social-preview image references in the document head. Keep preload sizes/srcsets aligned with the first hero picture.
+6. Check the gallery, filters, full-size viewer, all slideshow controls, automatic playback/pause, WebP fallback, reduced motion, mobile layouts, and initial network requests before publishing.
 
 Only publish client photographs with permission. Add reviews, statistics, or before/after comparisons only when authentic content is available. For a comparison, use a matching original and edited result rather than unrelated photographs.
 
 ## Publish
 
-Upload `index.html` and the complete `assets/` directory to a static host. For branch-based hosting, merge the reviewed update into the branch configured by the host and let that host deploy it. Existing GitHub Pages, Vercel, or other hosting settings are not changed by editing these files.
+Upload `index.html`, `vercel.json`, and the complete `assets/` directory to the static host. The existing website is hosted on Vercel at `pesolicreativehub.vercel.app`; publish the reviewed commit to that project's production environment. Keep the cache headers when deploying through Vercel. Other hosting providers need equivalent cache rules.
 
 The social-preview URL and image point to the existing `pesolicreativehub.vercel.app` site. Update them if the website moves to a different domain.
 
@@ -104,4 +126,4 @@ The social-preview URL and image point to the existing `pesolicreativehub.vercel
 
 Poppins and Playfair Display are distributed under the SIL Open Font License. Their license files are included in `assets/fonts/`. The Lucide vector icons are covered by the license in `assets/LUCIDE-LICENSE.txt`.
 
-Updated November 8, 2026 with six additional works; 11 works in total.
+Updated November 8, 2026: 11 works, responsive image delivery, deferred loading, and static-asset caching.
