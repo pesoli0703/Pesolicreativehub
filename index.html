@@ -9,13 +9,13 @@
     <meta property="og:description" content="Explore our latest portraits, photo restoration and creative editing work. Send your photo for a free assessment.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pesolicreativehub.vercel.app/">
-    <meta property="og:image" content="https://pesolicreativehub.vercel.app/assets/portfolio/pastel-stairway.webp">
-    <meta property="og:image:alt" content="Pastel-toned portrait from the latest Pesoli Creative Hub collection">
+    <meta property="og:image" content="https://pesolicreativehub.vercel.app/assets/portfolio/red-print-portrait.webp">
+    <meta property="og:image:alt" content="Red print portrait from the latest Pesoli Creative Hub collection">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pesoli Creative Hub | Latest Portrait Work">
     <meta name="twitter:description" content="Photo restoration, portrait design and creative retouching. Explore the latest collection.">
     <title>Pesoli Creative Hub | Photo Restoration & Portrait Design</title>
-    <link rel="preload" as="image" href="assets/portfolio/pastel-stairway.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/portfolio/red-print-portrait.webp" fetchpriority="high">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-400-normal.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-latin-700-normal.woff2" crossorigin>
 
@@ -278,13 +278,13 @@
         .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
         .hero-portrait { width: 100%; max-width: 440px; justify-self: end; min-width: 0; }
         .hero-frame { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 12px; border: 1px solid var(--gold-border); background: #151515; }
-        .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.7s ease; }
+        .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.7s ease; }
         .hero-slide.active { opacity: 1; }
         .hero-caption { display: flex; justify-content: space-between; gap: 15px; margin-top: 16px; color: rgba(255,255,255,0.8); font-size: 0.8rem; }
         .hero-count { color: var(--gold); white-space: nowrap; font-variant-numeric: tabular-nums; }
-        .slideshow-controls { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 12px; }
-        .slideshow-dots { display: flex; gap: 4px; }
-        .slideshow-dot { width: 32px; height: 32px; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+        .slideshow-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+        .slideshow-dots { display: flex; flex-wrap: wrap; gap: 2px; }
+        .slideshow-dot { width: 28px; height: 32px; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
         .slideshow-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #62605a; transition: background 0.2s, transform 0.2s; }
         .slideshow-dot[aria-pressed="true"]::after { background: var(--gold); transform: scale(1.4); }
         .slideshow-toggle { border: 1px solid var(--gold-border); border-radius: 30px; background: transparent; color: var(--gold); padding: 7px 14px; font: 0.75rem 'Poppins', sans-serif; cursor: pointer; min-width: 70px; }
@@ -393,7 +393,7 @@
 
         .gallery-item img {
             width: 100%; height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -739,10 +739,10 @@
         <div class="lightbox-shell">
             <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview" autofocus>×</button>
             <div class="lightbox-stage">
-                <img src="assets/portfolio/pastel-stairway.webp" alt="Pastel tones on the stairs" class="lightbox-image" id="lightboxImage" width="1086" height="1448">
+                <img src="assets/portfolio/pastel-stairway.webp" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." class="lightbox-image" id="lightboxImage" width="1086" height="1448">
             </div>
             <div class="lightbox-footer">
-                <p class="lightbox-caption"><span id="lightboxCaption">Pastel tones on the stairs</span><span class="lightbox-count" id="lightboxCount">1 / 5</span></p>
+                <p class="lightbox-caption"><span id="lightboxCaption">Red print portrait</span><span class="lightbox-count" id="lightboxCount">1 / 11</span></p>
                 <div class="lightbox-navigation" aria-label="Browse photos">
                     <button id="lightboxPrevious" aria-label="Previous photo"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7" />
   <path d="M19 12H5" /></svg></button>
@@ -773,22 +773,24 @@
                     <a class="luxury-button secondary" href="#portfolio">View Our Latest Work</a>
                 </div>
             </div>
-            <figure class="hero-portrait" aria-label="Latest portrait collection">
+            <figure class="hero-portrait" aria-label="Latest portrait and celebration designs">
                 <div class="hero-frame" id="heroFrame">
-                    <img class="hero-slide active" src="assets/portfolio/pastel-stairway.webp" alt="Portrait in a pink halter top and pastel patterned shorts, leaning on a staircase railing." width="1086" height="1448" fetchpriority="high" decoding="async" aria-hidden="false" data-title="Pastel tones on the stairs">
-                    <img class="hero-slide" src="assets/portfolio/courtyard-portrait.webp" alt="Portrait in a blue floral dress, seated beneath a green umbrella in a courtyard." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Courtyard in blue">
-                    <img class="hero-slide" src="assets/portfolio/pastel-portrait.webp" alt="Full-length portrait in a pink top and pastel patterned shorts beside a staircase and green plant." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Pastel portrait by the staircase">
-                    <img class="hero-slide" src="assets/portfolio/gold-mirror-portrait.webp" alt="Portrait in a pink halter top and colorful shorts beside a gold-framed mirror." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Gold mirror portrait">
-                    <img class="hero-slide" src="assets/portfolio/blue-poolside.webp" alt="Outdoor portrait in a bright blue swimsuit beside a pool terrace railing." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Poolside in blue">
+                    <img class="hero-slide active" src="assets/portfolio/red-print-portrait.webp" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" fetchpriority="high" decoding="async" aria-hidden="false" data-title="Red print portrait">
+                    <img class="hero-slide" src="assets/portfolio/gold-accents-portrait.webp" alt="Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Gold accents portrait">
+                    <img class="hero-slide" src="assets/portfolio/black-dress-mirror.webp" alt="Portrait in a ruched black dress leaning against a gold and mirrored console." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="Black dress by the mirror">
+                    <img class="hero-slide" src="assets/portfolio/ninetieth-birthday-blue.webp" alt="90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations." width="1024" height="1536" loading="lazy" decoding="async" aria-hidden="true" data-title="90th birthday in blue">
+                    <img class="hero-slide" src="assets/portfolio/retirement-sixtieth-birthday.webp" alt="Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement &amp; 60th Birthday banner." width="928" height="877" loading="lazy" decoding="async" aria-hidden="true" data-title="Retirement &amp; 60th birthday">
+                    <img class="hero-slide" src="assets/portfolio/ninetieth-birthday-green.webp" alt="90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations." width="1086" height="1448" loading="lazy" decoding="async" aria-hidden="true" data-title="90th birthday in green">
                 </div>
-                <figcaption class="hero-caption"><span id="heroCaption">Pastel tones on the stairs</span><span class="hero-count" id="heroCount">01 / 05</span></figcaption>
+                <figcaption class="hero-caption"><span id="heroCaption">Red print portrait</span><span class="hero-count" id="heroCount">01 / 06</span></figcaption>
                 <div class="slideshow-controls" id="slideshowControls" hidden>
                     <div class="slideshow-dots" role="group" aria-label="Choose a featured photo">
-                        <button class="slideshow-dot" data-slide="0" aria-label="Show photo 1: Pastel tones on the stairs" aria-pressed="true"></button>
-                        <button class="slideshow-dot" data-slide="1" aria-label="Show photo 2: Courtyard in blue" aria-pressed="false"></button>
-                        <button class="slideshow-dot" data-slide="2" aria-label="Show photo 3: Pastel portrait by the staircase" aria-pressed="false"></button>
-                        <button class="slideshow-dot" data-slide="3" aria-label="Show photo 4: Gold mirror portrait" aria-pressed="false"></button>
-                        <button class="slideshow-dot" data-slide="4" aria-label="Show photo 5: Poolside in blue" aria-pressed="false"></button>
+                        <button class="slideshow-dot" data-slide="0" aria-label="Show photo 1: Red print portrait" aria-pressed="true"></button>
+                        <button class="slideshow-dot" data-slide="1" aria-label="Show photo 2: Gold accents portrait" aria-pressed="false"></button>
+                        <button class="slideshow-dot" data-slide="2" aria-label="Show photo 3: Black dress by the mirror" aria-pressed="false"></button>
+                        <button class="slideshow-dot" data-slide="3" aria-label="Show photo 4: 90th birthday in blue" aria-pressed="false"></button>
+                        <button class="slideshow-dot" data-slide="4" aria-label="Show photo 5: Retirement &amp; 60th birthday" aria-pressed="false"></button>
+                        <button class="slideshow-dot" data-slide="5" aria-label="Show photo 6: 90th birthday in green" aria-pressed="false"></button>
                     </div>
                     <button class="slideshow-toggle" id="slideshowToggle" aria-label="Pause automatic slideshow">Pause</button>
                 </div>
@@ -892,15 +894,88 @@
         <div class="container">
             <p class="eyebrow" style="text-align:center;">The latest collection</p>
             <h2 class="section-heading gradient-text" id="portfolio-heading">Our Latest Work</h2>
-            <p class="section-intro">Five new portrait photographs, full of color and personality. Select any photo to take a closer look.</p>
-            <div class="category-filter" id="categoryFilter" role="group" aria-label="Filter portfolio by setting" hidden>
-                <button class="category-btn active" data-category="all" aria-pressed="true" aria-controls="galleryContainer">All work · 5</button>
-                <button class="category-btn" data-category="indoor" aria-pressed="false" aria-controls="galleryContainer">Indoor · 3</button>
+            <p class="section-intro">Explore 11 portraits and celebration designs, including six new additions. Select any image to take a closer look.</p>
+            <div class="category-filter" id="categoryFilter" role="group" aria-label="Filter portfolio by collection" hidden>
+                <button class="category-btn active" data-category="all" aria-pressed="true" aria-controls="galleryContainer">All work · 11</button>
+                <button class="category-btn" data-category="portraits" aria-pressed="false" aria-controls="galleryContainer">Portraits · 6</button>
                 <button class="category-btn" data-category="outdoor" aria-pressed="false" aria-controls="galleryContainer">Outdoor · 2</button>
+                <button class="category-btn" data-category="celebrations" aria-pressed="false" aria-controls="galleryContainer">Celebrations · 3</button>
             </div>
-            <p class="gallery-status" id="galleryStatus" role="status" aria-live="polite" hidden>Showing all 5 photos</p>
+            <p class="gallery-status" id="galleryStatus" role="status" aria-live="polite" hidden>Showing all 11 photos</p>
             <div class="masonry-gallery" id="galleryContainer">
-                <a class="gallery-item" href="assets/portfolio/pastel-stairway.webp" data-category="indoor" data-title="Pastel tones on the stairs" aria-label="View full photo: Pastel tones on the stairs" aria-haspopup="dialog">
+                <a class="gallery-item" href="assets/portfolio/red-print-portrait.webp" data-category="portraits" data-title="Red print portrait" aria-label="View full image: Red print portrait" aria-haspopup="dialog">
+                    <img src="assets/portfolio/red-print-portrait-540.webp" srcset="assets/portfolio/red-print-portrait-540.webp 540w, assets/portfolio/red-print-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Full-length portrait in a black long-sleeve top and red patterned wrap skirt with a long fabric train." width="1086" height="1448" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">Red print portrait</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/gold-accents-portrait.webp" data-category="portraits" data-title="Gold accents portrait" aria-label="View full image: Gold accents portrait" aria-haspopup="dialog">
+                    <img src="assets/portfolio/gold-accents-portrait-540.webp" srcset="assets/portfolio/gold-accents-portrait-540.webp 540w, assets/portfolio/gold-accents-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a black top and red patterned wrap skirt beside gold hexagonal wall mirrors." width="1086" height="1448" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">Gold accents portrait</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/black-dress-mirror.webp" data-category="portraits" data-title="Black dress by the mirror" aria-label="View full image: Black dress by the mirror" aria-haspopup="dialog">
+                    <img src="assets/portfolio/black-dress-mirror-540.webp" srcset="assets/portfolio/black-dress-mirror-540.webp 540w, assets/portfolio/black-dress-mirror.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a ruched black dress leaning against a gold and mirrored console." width="1086" height="1448" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">Black dress by the mirror</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/ninetieth-birthday-blue.webp" data-category="celebrations" data-title="90th birthday in blue" aria-label="View full image: 90th birthday in blue" aria-haspopup="dialog">
+                    <img src="assets/portfolio/ninetieth-birthday-blue-540.webp" srcset="assets/portfolio/ninetieth-birthday-blue-540.webp 540w, assets/portfolio/ninetieth-birthday-blue.webp 1024w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="90th birthday portrait in blue traditional clothing and coral beads, with blue, white and gold decorations." width="1024" height="1536" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">90th birthday in blue</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/retirement-sixtieth-birthday.webp" data-category="celebrations" data-title="Retirement &amp; 60th birthday" aria-label="View full image: Retirement &amp; 60th birthday" aria-haspopup="dialog">
+                    <img src="assets/portfolio/retirement-sixtieth-birthday-540.webp" srcset="assets/portfolio/retirement-sixtieth-birthday-540.webp 540w, assets/portfolio/retirement-sixtieth-birthday.webp 928w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Celebration design featuring a smiling man in purple traditional clothing in a library setting, with a Retirement &amp; 60th Birthday banner." width="928" height="877" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">Retirement &amp; 60th birthday</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/ninetieth-birthday-green.webp" data-category="celebrations" data-title="90th birthday in green" aria-label="View full image: 90th birthday in green" aria-haspopup="dialog">
+                    <img src="assets/portfolio/ninetieth-birthday-green-540.webp" srcset="assets/portfolio/ninetieth-birthday-green-540.webp 540w, assets/portfolio/ninetieth-birthday-green.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="90th birthday portrait in green traditional clothing and coral beads, with green and gold decorations." width="1086" height="1448" loading="lazy" decoding="async">
+                    <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
+  <path d="m15 9 6-6" />
+  <path d="M21 16v5h-5" />
+  <path d="M21 8V3h-5" />
+  <path d="M3 16v5h5" />
+  <path d="m3 21 6-6" />
+  <path d="M3 8V3h5" />
+  <path d="M9 9 3 3" /></svg></span></span>
+                    <span class="image-label">90th birthday in green</span>
+                </a>
+                <a class="gallery-item" href="assets/portfolio/pastel-stairway.webp" data-category="portraits" data-title="Pastel tones on the stairs" aria-label="View full photo: Pastel tones on the stairs" aria-haspopup="dialog">
                     <img src="assets/portfolio/pastel-stairway-540.webp" srcset="assets/portfolio/pastel-stairway-540.webp 540w, assets/portfolio/pastel-stairway.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a pink halter top and pastel patterned shorts, leaning on a staircase railing." width="1086" height="1448" loading="lazy" decoding="async">
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
@@ -924,7 +999,7 @@
   <path d="M9 9 3 3" /></svg></span></span>
                     <span class="image-label">Courtyard in blue</span>
                 </a>
-                <a class="gallery-item" href="assets/portfolio/pastel-portrait.webp" data-category="indoor" data-title="Pastel portrait by the staircase" aria-label="View full photo: Pastel portrait by the staircase" aria-haspopup="dialog">
+                <a class="gallery-item" href="assets/portfolio/pastel-portrait.webp" data-category="portraits" data-title="Pastel portrait by the staircase" aria-label="View full photo: Pastel portrait by the staircase" aria-haspopup="dialog">
                     <img src="assets/portfolio/pastel-portrait-540.webp" srcset="assets/portfolio/pastel-portrait-540.webp 540w, assets/portfolio/pastel-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Full-length portrait in a pink top and pastel patterned shorts beside a staircase and green plant." width="1086" height="1448" loading="lazy" decoding="async">
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
@@ -936,7 +1011,7 @@
   <path d="M9 9 3 3" /></svg></span></span>
                     <span class="image-label">Pastel portrait by the staircase</span>
                 </a>
-                <a class="gallery-item" href="assets/portfolio/gold-mirror-portrait.webp" data-category="indoor" data-title="Gold mirror portrait" aria-label="View full photo: Gold mirror portrait" aria-haspopup="dialog">
+                <a class="gallery-item" href="assets/portfolio/gold-mirror-portrait.webp" data-category="portraits" data-title="Gold mirror portrait" aria-label="View full photo: Gold mirror portrait" aria-haspopup="dialog">
                     <img src="assets/portfolio/gold-mirror-portrait-540.webp" srcset="assets/portfolio/gold-mirror-portrait-540.webp 540w, assets/portfolio/gold-mirror-portrait.webp 1086w" sizes="(min-width: 1000px) 420px, (min-width: 560px) 48vw, 92vw" alt="Portrait in a pink halter top and colorful shorts beside a gold-framed mirror." width="1086" height="1448" loading="lazy" decoding="async">
                     <span class="gallery-overlay" aria-hidden="true"><span class="gallery-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 15 6 6" />
   <path d="m15 9 6-6" />
@@ -1285,7 +1360,7 @@
                 visibleItems = galleryItems.filter(item => !item.hidden);
                 document.getElementById('galleryStatus').textContent = category === 'all'
                     ? `Showing all ${visibleItems.length} photos`
-                    : `Showing ${visibleItems.length} ${category} photos`;
+                    : `Showing ${visibleItems.length} ${{ portraits: 'portrait', outdoor: 'outdoor', celebrations: 'celebration' }[category]} photos`;
             });
         });
 
@@ -1293,7 +1368,10 @@
             currentPhoto = (index + visibleItems.length) % visibleItems.length;
             const item = visibleItems[currentPhoto];
             lightboxImage.src = item.href;
-            lightboxImage.alt = item.querySelector('img').alt;
+            const thumbnail = item.querySelector('img');
+            lightboxImage.alt = thumbnail.alt;
+            lightboxImage.width = Number(thumbnail.getAttribute('width'));
+            lightboxImage.height = Number(thumbnail.getAttribute('height'));
             document.getElementById('lightboxCaption').textContent = item.dataset.title;
             document.getElementById('lightboxCount').textContent = `${currentPhoto + 1} / ${visibleItems.length}`;
             const previous = visibleItems[(currentPhoto - 1 + visibleItems.length) % visibleItems.length];
